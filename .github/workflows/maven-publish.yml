@@ -3,9 +3,9 @@
 
 name: Maven Package
 
-#on: [push, pull_request]
-on: 
-  workflow_dispatch
+on: [push, pull_request]
+#on: 
+#  workflow_dispatch
 jobs:
   build:
 
@@ -26,6 +26,13 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: ls command
+      run: |
+        ls
+        echo '----------------------*********************---------------------'
+        ls dist
+        echo '---------------------***********************--------------------'
+        ls target
       
       
       
